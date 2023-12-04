@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq3iqpfebyeue"]
+
+[ext_resource type="Texture2D" uid="uid://d3uh3fpsuelgm" path="res://background.png" id="1_kx05h"]
+[ext_resource type="PackedScene" uid="uid://bco4w8nf82cud" path="res://player/player.tscn" id="2_4al3b"]
+[ext_resource type="Texture2D" uid="uid://dikjf3vowifdn" path="res://bluebar.png" id="3_hep2t"]
+[ext_resource type="PackedScene" uid="uid://x50o1lnwwks6" path="res://enemies/enemy.tscn" id="4_gpk2e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiyy3"]
+size = Vector2(400, 16)
+
+[node name="gamemanager" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(200.438, 300.5)
+scale = Vector2(0.519018, 0.600802)
+texture = ExtResource("1_kx05h")
+
+[node name="player" parent="." instance=ExtResource("2_4al3b")]
+position = Vector2(205, 571)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(200, 474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_iiyy3")
+
+[node name="Bluebar" type="Sprite2D" parent="Area2D"]
+position = Vector2(2.09383e-05, 0)
+scale = Vector2(0.686106, 0.228571)
+texture = ExtResource("3_hep2t")
+
+[node name="enemy" parent="." instance=ExtResource("4_gpk2e")]
+position = Vector2(189, 198)
+
+[node name="bullets" type="Node" parent="."]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://x50o1lnwwks6"]
+
+[ext_resource type="Texture2D" uid="uid://bs0kexwo8e2vf" path="res://enemies/pngwing.com.png" id="1_1px4c"]
+
+[node name="enemy" type="Node2D"]
+
+[node name="Pngwing_com" type="Sprite2D" parent="."]
+scale = Vector2(0.082, 0.082)
+texture = ExtResource("1_1px4c")
